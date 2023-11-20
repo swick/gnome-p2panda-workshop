@@ -7,7 +7,7 @@ Adw.StatusPage {
   valign: start;
 
   Adw.Clamp {
-    maximum-size: 640;
+    maximum-size: 400;
 
     Box {
       orientation: vertical;
@@ -59,7 +59,7 @@ Adw.StatusPage {
         }
 
         StackPage {
-          title: _("Add new");
+          title: _("Add New");
 
           child: Box {
             halign: center;
@@ -69,15 +69,13 @@ Adw.StatusPage {
             Box {
               orientation: vertical;
 
-              Label {
-                label: _("URL");
-                margin-bottom: 12;
-              }
-
-              Entry url {
-                primary-icon-name: "earth-symbolic";
+              AdwEntryRow url {
                 input-purpose: url;
-                placeholder-text: "Enter URL here";
+                title: "Enter URL here";
+
+                styles [
+                  "card"
+                ]
               }
             }
 
@@ -108,7 +106,11 @@ Adw.StatusPage {
             }
 
             Button add {
-              label: "Add bookmark";
+              label: "Add Bookmark";
+
+              styles [
+                "pill"
+              ]
             }
           };
         }
